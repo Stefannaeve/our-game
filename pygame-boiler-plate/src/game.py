@@ -10,13 +10,11 @@ from assets import *
 pygame.init()
 
 # Set up the window
-WIDTH, HEIGHT = 800, 600
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("My First Pygame!")
 
 # Clock to control framerate
 clock = pygame.time.Clock()
-FRAMERATE = 60
 
 # Colors
 WHITE = (255, 255, 255)
