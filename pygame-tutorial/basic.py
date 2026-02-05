@@ -1,6 +1,8 @@
 import pygame
 import sys
 
+from .assets import BACKGROUND_IMAGE
+
 # Initialize pygame
 pygame.init()
 
@@ -20,7 +22,7 @@ BLUE = (60, 60, 255)
 
 # Game variables
 x, y = 100, 100
-speed = 5
+speed = 10
 size = 50
 
 # Game loop
@@ -35,17 +37,18 @@ while running:
 
     # Get key presses
     keys = pygame.key.get_pressed()
-    if keys[pygame.K_LEFT]:
+    if keys[pygame.K_a]:
         x -= speed
-    if keys[pygame.K_RIGHT]:
+    if keys[pygame.K_d]:
         x += speed
-    if keys[pygame.K_UP]:
+    if keys[pygame.K_w]:
         y -= speed
-    if keys[pygame.K_DOWN]:
+    if keys[pygame.K_s]:
         y += speed
 
     # Draw
     screen.fill(WHITE)
+    screen.blit(BACKGROUND_IMAGE, 0, 0)
     pygame.draw.rect(screen, BLUE, (x, y, size, size))
 
     # Update display
